@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Common Properties">
+    <TargetFramework>net46</TargetFramework>
+    <GameDlls>C:\Program Files (x86)\Steam\steamapps\common\Gold Rush The Game\GoldRushTheGame_Data\Managed</GameDlls>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(GameDlls)\UnityEngine.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.AnimationModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.CoreModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.IMGUIModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.ParticleSystemModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.PhysicsModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.TextRenderingModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.UI.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.UIElementsModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.UIModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.UNETModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.UnityWebRequestModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.AssetBundleModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.Physics2DModule.dll" Private="false" SpecificVersion="true" />
+    <Reference Include="$(GameDlls)\UnityEngine.JSONSerializeModule.dll" Private="false" SpecificVersion="true" />
+  </ItemGroup>
+</Project>
