@@ -33,8 +33,11 @@ namespace grtg_mp
 
         void Update()
         {
-            transform.position = player.transform.position;
-            transform.rotation = player.transform.rotation;
+            if (isLocalPlayer)
+            {
+                transform.position = player.transform.position;
+                transform.rotation = player.transform.rotation;
+            }
 
             State.isServer = isServer;
             State.isClient = isClient;

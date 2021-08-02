@@ -12,10 +12,7 @@ namespace Mirror_External_Weaver
     {
         public static void Main(string[] args)
         {
-            //Console.WriteLine(args[0]);
-
-            //Console.WriteLine(args[1]);
-            Weaver.WeaveAssembly("C:\\Users\\michael\\source\\repos\\grtg-mp\\bin\\Debug\\grtg-mp.dll", new string[] { "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Gold Rush The Game\\GoldRushTheGame_Data\\Managed" });
+            Weaver.WeaveAssembly(args[0], new string[] { args[1] });
         }
 
         public static string mirrorDllLocation = "Mirror.dll";

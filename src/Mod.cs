@@ -40,35 +40,32 @@ namespace grtg_mp
             harmony = new Harmony("com.person4268.grtg-mp");
             harmony.PatchAll();
 
-
-            // Step 2: Load Assets
-            string basePath = Path.GetDirectoryName(Info.Location);
-
-            string assetPath = Path.Combine(new string[] { basePath , "mpassets" });
-            Log.Debug("Asset path is " + assetPath);
-
-            Assets.assets = AssetBundle.LoadFromFile(assetPath);
-            if(Assets.assets == null)
-            {
-                Log.Error("Failed to load assets!");
-            }
-
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Components.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Telepathy.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "kcp2k.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Authenticators.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Cloud.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "SimpleWebTransport.dll" }));
-
-            // Step 3: Setup Mirror readers and writers
+            // Step 2: Setup Mirror readers and writers
             var ass = Assembly.GetExecutingAssembly();
             var type = ass.GetType("Mirror.GeneratedNetworkCode");
             var meth = type.GetMethod("InitReadWriters");
             meth.Invoke(null, null);
 
 
-            // Step 3: Setup Mirror and NetworkManager stuff (FUTURE NOTE: MAKE SURE THAT THIS ALL GETS RAN ONLY IN MAIN GAME SCENE OR IMPLEMENT SWITCHING
+            // Step 3: Load Assets
+            string basePath = Path.GetDirectoryName(Info.Location);
+
+            string assetPath = Path.Combine(new string[] { basePath , "mpassets" });
+            Log.Debug("Asset path is " + assetPath);
+
+            Assets.assets = AssetBundle.LoadFromFile(assetPath);
+            if (Assets.assets == null)
+            {
+                Log.Error("Failed to load assets!");
+            }
+
+            // Step 3.5: Load Mirror assemblies for Unity
+            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.dll" }));
+            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Components.dll" }));
+            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Authenticators.dll" }));
+            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Cloud.dll" }));
+
+            // Step 4: Setup Mirror and NetworkManager stuff (FUTURE NOTE: MAKE SURE THAT THIS ALL GETS RAN ONLY IN MAIN GAME SCENE OR IMPLEMENT SWITCHING
             State.netManager = new GameObject("NetManager");
             State.transport = State.netManager.AddComponent<kcp2k.KcpTransport>();
             State.manager = State.netManager.AddComponent<NetworkManager>();

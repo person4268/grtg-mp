@@ -172,10 +172,6 @@ namespace Mirror.Weaver
                     {
                         asmResolver.AddSearchDirectory(path);
                     }
-                    foreach(string dir in asmResolver.GetSearchDirectories())
-                    {
-                        Console.WriteLine(dir);
-                    }
                 }
 
                 WeaverTypes.SetupTargetTypes(CurrentAssembly);
