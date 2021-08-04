@@ -31,6 +31,7 @@ namespace grtg_mp
             }
 
             Log.Info("NetPlayer: Do we have authority for this player: " + gameObject.GetComponent<NetworkTransform>().hasAuthority);
+            Log.Info("NetPlayer: NetworkBehaviour.hasAuthority: " + hasAuthority);
         }
 
         void Update()

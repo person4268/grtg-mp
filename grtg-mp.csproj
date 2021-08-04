@@ -18,7 +18,7 @@
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)MirrorExternalWeaver\$(OutputPath)Mirror External Weaver.exe" "$(MSBuildProjectName).dll" "$(GameDlls)"</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)MirrorExternalWeaver\Mirror External Weaver.exe" "$(MSBuildProjectName).dll" "$(GameDlls)"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="packages\BepInEx.Core.5.4.11\build\BepInEx.Core.targets" Condition="Exists('packages\BepInEx.Core.5.4.11\build\BepInEx.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grtg-mp", "grtg-mp.csproj", "{814A4B7F-94F4-4E6F-9AEE-67B599CD750D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F57F5C83-6C82-46C4-A74A-98666A0F2E11} = {F57F5C83-6C82-46C4-A74A-98666A0F2E11}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror.Components", "Mirror\Components\Mirror.Components.csproj", "{7B568291-3A94-4F7B-8941-67498A33117B}"
 EndProject
@@ -15,8 +12,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror.Authenticators", "Mirror\Authenticators\Mirror.Authenticators.csproj", "{EAAA2F8A-D1A6-4761-8DC5-DB6BED7218D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror", "Mirror\Runtime\Mirror.csproj", "{70ECC39B-D9C3-40B2-99C2-7EA2F857A152}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror External Weaver", "MirrorExternalWeaver\Mirror External Weaver.csproj", "{F57F5C83-6C82-46C4-A74A-98666A0F2E11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +39,6 @@ Global
 		{70ECC39B-D9C3-40B2-99C2-7EA2F857A152}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70ECC39B-D9C3-40B2-99C2-7EA2F857A152}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70ECC39B-D9C3-40B2-99C2-7EA2F857A152}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F57F5C83-6C82-46C4-A74A-98666A0F2E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F57F5C83-6C82-46C4-A74A-98666A0F2E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F57F5C83-6C82-46C4-A74A-98666A0F2E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F57F5C83-6C82-46C4-A74A-98666A0F2E11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
