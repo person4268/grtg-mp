@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Mirror\Authenticators\Mirror.Authenticators.csproj" />
-    <ProjectReference Include="Mirror\Cloud\Mirror.Cloud.csproj" />
     <ProjectReference Include="Mirror\Components\Mirror.Components.csproj" />
     <ProjectReference Include="Mirror\Runtime\Mirror.csproj" />
   </ItemGroup>

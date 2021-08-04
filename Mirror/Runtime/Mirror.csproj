@@ -6,10 +6,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
-  </PropertyGroup>
   <ItemGroup>
-
+    <Compile Remove="Transport\KCP\" />
+    <Compile Remove="Transport\SimpleWebTransport\**" />
+    <Compile Remove="Transport\Telepathy\**" />
+    <EmbeddedResource Remove="Transport\KCP\**" />
+    <EmbeddedResource Remove="Transport\SimpleWebTransport\**" />
+    <EmbeddedResource Remove="Transport\Telepathy\**" />
+    <None Remove="Transport\KCP\kcp2k\**" />
+    <None Remove="Transport\SimpleWebTransport\**" />
+    <None Remove="Transport\Telepathy\**" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Runtime\Mirror.csproj" />
+    <ProjectReference Include="..\Runtime\Mirror.csproj">
+      <Private>true</Private>
+    </ProjectReference>
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd $(OutputPath)&#xD;&#xA;&quot;$(SolutionDir)MirrorExternalWeaver\Mirror External Weaver.exe&quot; &quot;$(MSBuildProjectName).dll&quot; &quot;$(GameDlls)&quot;" />
+  </Target>
 </Project>

@@ -39,9 +39,9 @@ namespace grtg_mp
             State.manager.playerPrefab = Assets.netPlayer;
 
             // Debug
-            State.manager.showDebugMessages = true;
-            Mirror.LogFilter.Debug = true;
-            State.transport.debugGUI = true;
+            //State.manager.showDebugMessages = true;
+            //Mirror.LogFilter.Debug = true;
+            //State.transport.debugGUI = true;
 
             // Make NetDummy Spawnable
             State.manager.spawnPrefabs.Add(Assets.netDummy);

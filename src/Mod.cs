@@ -44,12 +44,17 @@ namespace grtg_mp
             var meth = type.GetMethod("InitReadWriters");
             meth.Invoke(null, null);
 
+            // Step 2.5: Run more RuntimeInitalizeOnLoad code
+            var assembly = Assembly.GetAssembly(typeof(NetworkManager));
+            type = assembly.GetType("Mirror.NetworkLoop");
+            AccessTools.Method(type, "RuntimeInitializeOnLoad").Invoke(null, null);
+
+
             // Step 3: Load Mirror assemblies for Unity
             string basePath = Path.GetDirectoryName(Info.Location);
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.dll" }));
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Components.dll" }));
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Authenticators.dll" }));
-            Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Cloud.dll" }));
 
 
             // Step 4: Load Assets

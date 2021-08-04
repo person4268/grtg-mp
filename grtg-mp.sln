@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grtg-mp", "grtg-mp.csproj",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror.Components", "Mirror\Components\Mirror.Components.csproj", "{7B568291-3A94-4F7B-8941-67498A33117B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror.Cloud", "Mirror\Cloud\Mirror.Cloud.csproj", "{624FA146-0EC4-45B3-8B56-4D87E12510D0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror.Authenticators", "Mirror\Authenticators\Mirror.Authenticators.csproj", "{EAAA2F8A-D1A6-4761-8DC5-DB6BED7218D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mirror", "Mirror\Runtime\Mirror.csproj", "{70ECC39B-D9C3-40B2-99C2-7EA2F857A152}"
@@ -27,10 +25,6 @@ Global
 		{7B568291-3A94-4F7B-8941-67498A33117B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B568291-3A94-4F7B-8941-67498A33117B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B568291-3A94-4F7B-8941-67498A33117B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{624FA146-0EC4-45B3-8B56-4D87E12510D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{624FA146-0EC4-45B3-8B56-4D87E12510D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{624FA146-0EC4-45B3-8B56-4D87E12510D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{624FA146-0EC4-45B3-8B56-4D87E12510D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EAAA2F8A-D1A6-4761-8DC5-DB6BED7218D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAAA2F8A-D1A6-4761-8DC5-DB6BED7218D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAAA2F8A-D1A6-4761-8DC5-DB6BED7218D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
