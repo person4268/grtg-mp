@@ -19,8 +19,6 @@ namespace grtg_mp
         public static kcp2k.KcpTransport transport;
         public static NetworkManager manager;
         public static NetworkManagerHUD managerHUD;
-
-        public static GameObject netPlayer;
     }
 
 
@@ -46,44 +44,25 @@ namespace grtg_mp
             var meth = type.GetMethod("InitReadWriters");
             meth.Invoke(null, null);
 
-
-            // Step 3: Load Assets
+            // Step 3: Load Mirror assemblies for Unity
             string basePath = Path.GetDirectoryName(Info.Location);
-
-            string assetPath = Path.Combine(new string[] { basePath , "mpassets" });
-            Log.Debug("Asset path is " + assetPath);
-
-            Assets.assets = AssetBundle.LoadFromFile(assetPath);
-            if (Assets.assets == null)
-            {
-                Log.Error("Failed to load assets!");
-            }
-
-            // Step 3.5: Load Mirror assemblies for Unity
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.dll" }));
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Components.dll" }));
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Authenticators.dll" }));
             Assembly.LoadFile(Path.Combine(new string[] { basePath, "Mirror.Cloud.dll" }));
 
-            // Step 4: Setup Mirror and NetworkManager stuff (FUTURE NOTE: MAKE SURE THAT THIS ALL GETS RAN ONLY IN MAIN GAME SCENE OR IMPLEMENT SWITCHING
-            State.netManager = new GameObject("NetManager");
-            State.transport = State.netManager.AddComponent<kcp2k.KcpTransport>();
-            State.manager = State.netManager.AddComponent<NetworkManager>();
-            State.managerHUD = State.netManager.AddComponent<NetworkManagerHUD>();
 
-            State.netPlayer = Assets.LoadAsset("NetPlayer");
-            State.netPlayer.AddComponent<NetPlayer>();
+            // Step 4: Load Assets
+            string assetPath = Path.Combine(new string[] { basePath , "mpassets" });
+            Assets.SetupAssets(assetPath);
 
-            if(State.netPlayer.GetComponent<NetworkIdentity>() == null)
-            {
-                Log.Error("NetPlayer doesn't have NetworkIdentity!");
-            }
+            // Step 4.5: Add script components
+            Assets.netDummy.AddComponent<NetDummy>();
+            Assets.netPlayer.AddComponent<NetPlayer>();
 
-            Transport.activeTransport = State.transport;
-            State.manager.playerPrefab = State.netPlayer;
 
-            State.manager.showDebugMessages = true;
-            State.transport.debugGUI = true;
+            // Step 5: Setup Mirror and NetworkManager stuff (FUTURE NOTE: MAKE SURE THAT THIS ALL GETS RAN ONLY IN MAIN GAME SCENE OR IMPLEMENT SWITCHING
+            new GameObject().AddComponent<MultiplayerCore>();
 
         }
     }

@@ -29,6 +29,8 @@ namespace grtg_mp
                 Log.Error("Player not found, setting fake player");
                 player = new GameObject();
             }
+
+            Log.Info("NetPlayer: Do we have authority for this player: " + gameObject.GetComponent<NetworkTransform>().hasAuthority);
         }
 
         void Update()
