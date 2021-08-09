@@ -63,6 +63,8 @@ namespace grtg_mp
 
             // Step 4.5: Add script components
             Assets.netDummy.AddComponent<NetDummy>();
+            Assets.netDummy.AddComponent<NetworkTransformChild>().enabled = false;
+
             Assets.netPlayer.AddComponent<NetPlayer>();
 
 

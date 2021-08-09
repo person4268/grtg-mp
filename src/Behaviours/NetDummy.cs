@@ -1,4 +1,5 @@
 ﻿using Mirror;
+
 using UnityEngine;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,10 @@ namespace grtg_mp
         {
             Log.Warning("NetDummy.Init(): " + gameObjectName);
             realGameObject = Instantiate(PrefabList.warehousePrefabs[gameObjectName]);
+            var netBehaviourChild = gameObject.GetComponent<NetworkTransformChild>();
+            netBehaviourChild.target = realGameObject.transform;
+            netBehaviourChild.enabled = true;
+
         }
 
         public override void OnStartClient()
@@ -27,7 +32,8 @@ namespace grtg_mp
             if (isClientOnly) Init();
         }
 
-        void Update()
+        // Renamed so it doesn't run
+        void _Update()
         {
             // If real game object changed position...
             if(realGameObject.transform.hasChanged)
